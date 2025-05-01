@@ -42,7 +42,7 @@ const Navbar = () => {
             w-full sm:w-auto
             rounded-md sm:rounded-none
             px-5 sm:px-0 py-2
-            text-primary font-semibold hover:text-black
+            text-gray-50 font-semibold hover:text-white
             transition-colors
           "
         >

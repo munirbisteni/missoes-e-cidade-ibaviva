@@ -4,6 +4,7 @@ import Navbar from './sections/Navbar'
 import Banner from './sections/Banner'
 import Apresentation from './sections/Apresentation'
 import ProjetosCarousel from './sections/Projects'
+import Missionaries from './sections/Missionaries'
 const App = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const App = () => {
         <Banner />
         <Apresentation />
         <ProjetosCarousel />
+        <Missionaries />
     </div>
   )
 }

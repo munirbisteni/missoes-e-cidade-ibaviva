@@ -10,12 +10,3 @@
     filter: none;
     opacity: 1;
   }
-
-.fade-image {
-opacity: 1;
-transition: opacity 0.5s ease-in-out;
-}
-.fade-image.fading {
-opacity: 0;
-}
-  

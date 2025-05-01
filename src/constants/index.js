@@ -120,3 +120,36 @@ export const projetos = [
     }
   ]
 
+
+  export const missionarios = [
+    {
+        nome: ["Lara", "Gui Cain"],
+        descricao:"Lara e Gui são membros da Ibaviva e missionários da Sepal Brasil. Gui está concluindo sua graduação em Teologia. E Lara é Educadora e Professora. Ao longo dos últimos cinco anos, ambos têm se dedicado constantemente ao serviço dos ministérios  na Iba, e ao aprimoramento de seus estudos, com o objetivo de se desenvolverem e estarem mais preparados para a missão. Atualmente, eles atuam no ministério de ensino (Crescer e Ministério de Mulheres), na frente transcultural do ministério de missões e lideram um pequeno grupo de jovens adultos. Agora, estão se preparando para voltarem para o Reino Unido (onde se conheceram em missão), com o propósito de levar o Evangelho.",
+        contato:{
+            "instagram": ["laracain", "@guicain"],
+            "telefone": ["(19)99995-0563", "(19)98450-0923"],
+        },
+        loc: [{
+            lat: 4,
+            lng: -74,
+            text: "Lara" + " e " + "Gui Cain",
+            color: "Red",
+            size: 30,
+        }]
+    },
+    {
+        nome: ["Madaí c. Tristan"],
+        descricao:"Madaí C Tristan, missionária de tempo integral na Cru Brasil. Desenvolveu seu ministério entre estudantes universitários evangelizando e discipulando. Nos últimos anos, desenvolveu uma área de Cuidado do Missionário, com treinamento e assessoria no levantamento de sustento pessoal e para projetos, acompanhamento na vida pessoal, familiar e ministerial do missionário. Desenvolve o mesmo projeto dando assessoria a 18 países da América Latina e Caribe. Tem oportunidade de ministrar o treinamento de levantamento de sustento missionário em diversas agencias missionárias do Brasil. Discipulado também é uma área do ministério que lhe dá muita alegria. Atualmente discipula 7 mulheres que amam Jesus e crescem em conhecimento e graça dEle.",
+        contato:{
+            "instagram": ["@madaict"],
+            "telefone": ["(19) 98129-0885"]
+        },
+        loc: [{
+            lat: -22.971201,
+            lng: -46.996410,
+            text: "Madaí c. Tristan",
+            color: "Red",
+            size: 30,
+        }]
+    }
+  ]

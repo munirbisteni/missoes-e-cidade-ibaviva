@@ -4,16 +4,22 @@ import React, { useState, useRef } from 'react';
 import { projetos } from '../constants';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import '../components/ProjetosCarousel.css';
 
 const ProjetosCarousel = () => {
-    const [modalImage, setModalImage] = useState(null);
-    const openModal = (img) => setModalImage(img);
-    const closeModal = () => setModalImage(null);
+    const [modalInfo, setModalInfo] = useState({ projIdx: null, imgIdx: null });
 
+    const [modalImage, setModalImage] = useState(null);
+    const openModal = (projIdx, imgIdx) => {
+        setModalInfo({ projIdx, imgIdx });
+      };
+      const closeModal = () => {
+        setModalInfo({ projIdx: null, imgIdx: null });
+      };
     const [imgIndex, setImgIndex] = useState(projetos.map(() => 0));
     const swiperRef = useRef();
 
@@ -93,12 +99,10 @@ const ProjetosCarousel = () => {
             ))}
             </Swiper>
         </div>
-
-      {/* Mobile: colunas empilhadas */}
-      <div className="md:hidden space-y-16">
-        {projetos.map((proj, idx) => (
-          <div key={idx} className="bg-white rounded-lg shadow-lg overflow-hidden">
-            {/* Texto e links */}
+        <div className="md:hidden space-y-16">
+        {projetos.map((proj, projIdx) => (
+          <div key={projIdx} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* ... texto e links ... */}
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{proj.titulo}</h3>
               <p className="text-gray-600 text-sm whitespace-pre-line">{proj.descricao}</p>
@@ -132,13 +136,13 @@ const ProjetosCarousel = () => {
               className="h-48"
               loop
             >
-              {proj.imagens.map((img,i) => (
-                <SwiperSlide key={i}>
+              {proj.imagens.map((img, imgIdx) => (
+                <SwiperSlide key={imgIdx}>
                   <img
                     src={img}
-                    alt={`${proj.titulo} ${i+1}`}
+                    alt={`${proj.titulo} ${imgIdx + 1}`}
                     className="w-full h-full object-cover cursor-pointer"
-                    onClick={() => openModal(img)}
+                    onClick={() => openModal(projIdx, imgIdx)}
                   />
                 </SwiperSlide>
               ))}
@@ -147,13 +151,57 @@ const ProjetosCarousel = () => {
         ))}
       </div>
 
-      {/* Modal para mobile */}
-      {modalImage && (
+      {/* Modal para mobile: agora com Swiper interno */}
+      {modalInfo.projIdx !== null && (
         <div
-            className="fixed inset-0 backdrop-blur-sm bg-black/10 flex items-center justify-center z-5"
-            onClick={closeModal}
+          className="fixed inset-0 backdrop-blur-sm bg-black/50 flex items-center justify-center z-50"
+          onClick={closeModal}
         >
-          <img src={modalImage} alt="Preview" className="max-w-full max-h-full rounded" />
+          <div
+            className="relative w-auto max-w-[90vw] min-h-[80vh] max-h-[90vh]"  // altura mínima e máxima
+            onClick={e => e.stopPropagation()}
+          >
+            <Swiper
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              initialSlide={modalInfo.imgIdx}
+              spaceBetween={10}
+              slidesPerView={1}
+              loop
+              centeredSlides
+              className='h-[80vh]'
+              style={{ flex: 1 }}   
+            >
+              {projetos[modalInfo.projIdx].imagens.map((img, i) => (
+                <SwiperSlide
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                  }}
+                >
+                  <img
+                    src={img}
+                    alt={`Imagem ${i + 1}`}
+                    style={{
+                        maxHeight: '100%',
+                        maxWidth: '100%',
+                        objectFit: 'contain',
+                      }}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <button
+              onClick={closeModal}
+              className="absolute z-100 top-10 right-2 text-white text-2xl"
+              >
+              &times; 
+            </button>
+          </div>
         </div>
       )}
     </section>

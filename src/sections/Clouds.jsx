@@ -1,7 +1,7 @@
 import Globe from 'react-globe.gl';
 import React, { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom';
-import * as THREE from 'https://esm.sh/three';
+import * as THREE from 'three';
 
 const Clouds = () => {
     const globeEl = useRef();
