@@ -126,12 +126,12 @@ export const projetos = [
         nome: ["Lara", "Gui Cain"],
         descricao:"Lara e Gui são membros da Ibaviva e missionários da Sepal Brasil. Gui está concluindo sua graduação em Teologia. E Lara é Educadora e Professora. Ao longo dos últimos cinco anos, ambos têm se dedicado constantemente ao serviço dos ministérios  na Iba, e ao aprimoramento de seus estudos, com o objetivo de se desenvolverem e estarem mais preparados para a missão. Atualmente, eles atuam no ministério de ensino (Crescer e Ministério de Mulheres), na frente transcultural do ministério de missões e lideram um pequeno grupo de jovens adultos. Agora, estão se preparando para voltarem para o Reino Unido (onde se conheceram em missão), com o propósito de levar o Evangelho.",
         contato:{
-            "instagram": ["laracain", "@guicain"],
+            "instagram": ["@laracain", "@guicain"],
             "telefone": ["(19)99995-0563", "(19)98450-0923"],
         },
         loc: [{
-            lat: 4,
-            lng: -74,
+            lat: 51.5072,
+            lng: -0.1275,
             text: "Lara" + " e " + "Gui Cain",
             color: "Red",
             size: 30,
@@ -148,6 +148,65 @@ export const projetos = [
             lat: -22.971201,
             lng: -46.996410,
             text: "Madaí c. Tristan",
+            color: "Red",
+            size: 30,
+        }]
+    },
+    {
+        nome: ["Michelli Bordinhon"],
+        descricao:"Michelli Bordinhon, fundadora do Projeto Buenkas, trabalha com a prevenção do abuso sexual infantil, resgatando a dignidade do brincar e autoestima da criança. Trabalho realizado por meio da confecção e entrega de bonecas. Já foram mais de 100 mil entregas de bonecas com 40 grupos de bunekeiras espalhados pelo Brasil. Atualmente, um dos grupos do projeto se reúne na Ibaviva todas as quarta-feiras, sendo responsáveis pela produção de várias bunkad produzidas. Ao orar pelo projeto, lembre-se das senhoras da nossa igreja que se dedicam a participar dele, também!",
+        contato:{
+            "instagram": ["@michellibordinhon", "projetobunekas"],
+            "telefone": ["(11) 97263-8207"]
+        },
+        loc: [{
+            lat: 3.444198,
+            lng: -72.883785 ,
+            text: "Michelli Bordinhon",
+            color: "Red",
+            size: 30,
+        }]
+    },
+    {
+        nome: ["Matilde"],
+        descricao:"Missionária em Asas de Socorro a 19 anos trabalhando com as comunidades carentes tanto do material e espiritual. Mas Deus tem sido apresentado à elas de várias maneiras! Através  da evangelização, da saúde. Nosso objetivo é que todos conheçam a Cristo como Salvador.  Janeiro tivemos várias atividades, com os adolescentes, jovens e crianças. Foi feito uma colônia de férias na comunidade!",
+        contato:{
+            "telefone": ["(62) 99126-1960"]
+        },
+        loc: [{
+            lat: -16.665136,
+            lng: -49.286041,
+            text: "Matilde",
+            color: "Red",
+            size: 30,
+        }]
+    },
+    {
+        nome: ["Paulo e Adriana"],
+        descricao:"Juntos com seus filhos André (14) e Daniel (12), são missionários da Sepal há 18 anos e missionários enviados à Espanha pela Ibaviva. O casal desenvolveu seu ministério servindo à igreja brasileira nas áreas de comunicação, ensino, eventos missionários e mentoria de adolescentes e jovens vocacionados. Há quase 4 anos moram em Linares, cidade do sul da Espanha, onde apoiam a igreja local espanhola nas áreas de ensino, liderança, treinamento, discipulado, louvor e comunicação. Paulinho e Adriana seguem produzindo o site e podcast irmaos.com, ministério que os impulsionou como missionários e que ainda utilizam como plataforma para mobilizar missões no Brasil. Além disso, coordenam as áreas de comunicação da OMF International e do ministério Igrejas Discipuladoras.",
+        contato:{
+            "telefone": ["+34 722 32 79 34 (Paulo)","+34 722 44 49 31 (Adriana)" ],
+            "instagram": ["@paulinhodegaspari", "@dridegaspari"],
+        },
+        loc: [{
+            lat: 40.416775,
+            lng: -3.703790,
+            text: "Paulo e Adriana",
+            color: "Red",
+            size: 30,
+        }]
+    },
+    {
+        nome: ["Tiago e Lu"],
+        descricao:"Tiago e a Lu, pais do Pedro, João e Maria Luiza, são missionários em tempo integral na Joy! Brasil, que desenvolve um trabalho de evangelismo e discipulado com adolescentes de 13 a 17 anos, levando a mensagem de salvação em Jesus Cristo, de forma criativa e cativante, dentro de seu contexto de vida. Estão em Vinhedo desde 2018, desenvolvendo o ministério na cidade, onde atualmente existem 8 grupos ativos de discipulados entre adolescentes e líderes voluntários.",
+        contato:{
+            "telefone": ["(19)98292-2739 (Pane)","(19)98143-5149 (Lu)" ],
+            "instagram": ["@@browniesebolosdalu"],
+        },
+        loc: [{
+            lat: -23.0301,
+            lng: -46.9756,
+            text: "Tiago e Lu",
             color: "Red",
             size: 30,
         }]
