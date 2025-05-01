@@ -17,13 +17,25 @@ const Banner = () => {
             <h1 className="text-2xl font-bold text-white">Missões e Cidade | IBAVIVA</h1>
         </div>
         </div>
-
-        <div className="hidden md:flex relative z-10 flex flex-col justify-center items-start text-left h-full px-6">
-          <div className="flex items-center space-x-4">
-            <img src="./assets/ibaviva.png" alt="Logo" className="w-30 h-auto object-contain" />
-            <h1 className="text-6xl font-bold text-white">Missões e Cidade <br/> IBAVIVA</h1>
+        
+        <div className="hidden md:flex relative z-10 flex-row justify-between items-center h-full px-6 w-full">
+          
+                    {/* Texto à direita (já existente) */}
+          <div className="flex flex-col justify-center items-start text-left w-1/2 pl-6">
+            <div className="flex items-center space-x-4">
+              <img src="./assets/ibaviva.png" alt="Logo" className="w-30 h-auto object-contain" />
+              <h1 className="text-6xl font-bold text-white">Missões e Cidade <br /> IBAVIVA</h1>
+            </div>
           </div>
+          {/* Texto à esquerda */}
+          <div className="flex flex-col justify-center items-end text-right w-1/4 pr-6">
+            <p className="text-lg text-gray-200 font-bold">
+              Um ministério que existe para capacitar e discipular os membros da Ibaviva no entendimento e participação da missão de Deus para o mundo.            
+            </p>
+          </div>
+          
         </div>
+
       </div>
     </div>
   )

@@ -7,8 +7,8 @@ const Apresentation = () => {
   const toggleAccordion = () => setIsOpen(prevState => !prevState);
 
   return (
-    <section className="py-12 px-6 md:px-16¢¢ max-w-4xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
+    <section className="py-12 px-6 md:px-16¢¢ max-w-4xl mx-auto mb-0 pb-0">
+      <h2 className="block md:hidden text-2xl font-semibold text-primary mb-6">
         Um ministério que existe para capacitar e discipular os membros da Ibaviva no entendimento e participação da missão de Deus para o mundo.
       </h2>
 

@@ -1,0 +1,21 @@
+.swiper-slide {
+    filter: blur(4px);
+    opacity: 0.5;
+    transition: filter 0.3s, opacity 0.3s;
+  }
+  
+  .swiper-slide-active,
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    filter: none;
+    opacity: 1;
+  }
+
+.fade-image {
+opacity: 1;
+transition: opacity 0.5s ease-in-out;
+}
+.fade-image.fading {
+opacity: 0;
+}
+  

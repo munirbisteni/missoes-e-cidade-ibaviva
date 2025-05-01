@@ -58,7 +58,7 @@ const Navbar = () => {
     <header
       className={`${
         showHeader ? 'block' : 'hidden'  // Aplica 'hidden' se o cabeçalho deve ser ocultado
-      } fixed inset-x-0 top-0 z-50 bg-white transition-all duration-300`}
+      } fixed inset-x-0 top-0 z-50 bg-secondary transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 sm:px-10 px-5">

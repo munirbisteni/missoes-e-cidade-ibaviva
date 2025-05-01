@@ -21,57 +21,102 @@ export const navLinks = [
     },
 ];
 
-export const projects = [
+// src/constants/projects.js
+export const projetos = [
     {
-      id: 1,
-      title: 'Projeto Bunekas',
-      description:
-        'Todas as quartas-feiras, aqui na Ibaviva, um grupo de pessoas se reúnem para confecionar bonecas. Esta oficina funciona para o Projeto Bunekas, uma iniciativa que trabalha na educação, cuidado e denúncia contra o abuso sexual infantil em diversas partes do Brasil e do mundo.',
-      images: [
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
+      titulo: "Projeto Bunekas",
+      descricao: "Todas as quartas-feiras, aqui na Ibaviva, um grupo de pessoas se reúnem para confeccionar bonecas. Esta oficina funciona para o Projeto Bunekas, uma iniciativa que trabalha na educação, cuidado e denúncia contra o abuso sexual infantil.",
+      imagens: [
+        "/assets/placeholder.jpg",
+        "/assets/placeholder.jpg",
+        "/assets/placeholder.jpg"
       ],
+      urlProjeto:{
+        "instagram": "",
+        "site": "https://www.instagram.com/arcavinhedo/",
+        "whatsapp": "",
+        "doacao": "",
+        } 
     },
     {
-      id: 2,
-      title: 'Casa de Passagem',
-      description:
-        'Todas as segundas-feiras, um grupo de homens se juntam na Casa de Passagem de Jundiaí, um lugar que abriga temporariamente moradores de ruas, famílias carentes e andarilhos. Esse grupo leva uma mensagem bíblica juntamente com um momento de oração e apoio aos abrigados.',
-      images: [
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
+      titulo: "Casa de Passagem",
+      descricao: "Todas as segundas-feiras, um grupo de homens se juntam na Casa de Passagem de Jundiaí, um lugar que abriga temporariamente moradores de ruas, famílias carentes e andarilhos. Esse grupo leva uma mensagem bíblica, momento de oração e apoio aos abrigados.",
+      imagens: [
+        "/assets/placeholder.jpg",
+        "/assets/placeholder.jpg",
+        "/assets/placeholder.jpg"
       ],
+      urlProjeto:{
+        "instagram": "https://arcavinhedo.com.br/",
+        "site": "",
+        "whatsapp": "",
+        "doacao": "doacao.com",
+        } 
     },
     {
-      id: 3,
-      title: 'Comunidade Vila Tupi',
-      description:
-        'Um projeto ousado de assistência social e evangelismo em uma comunidade carente em Jundiaí. É a igreja auxíliando pessoas com dificuldades e levando o evangelho de uma forma carinhosa e com muito vigor. Louvor, palavra, pequenos grupos, auxílio social e emocional estão incluídos neste projeto.',
-      images: [
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
+      titulo: "Comunidade Vila Tupi",
+      descricao: "Um projeto de assistência social e evangelismo em uma comunidade carente em Jundiaí. A equipe de missões e cidade trabalha semanalmente com louvor, palavra, grupos e apoio social.",
+      imagens: [
+        "/assets/placeholder.jpg",
+        "/assets/placeholder2.jpg",
+        "/assets/placeholder2.jpg"
       ],
+      urlProjeto:{
+        "instagram": "https://arcavinhedo.com.br/",
+        "site": "https://www.instagram.com/arcavinhedo/",
+        "whatsapp": "",
+        "doacao": "",
+        } 
     },
     {
-    id: 4,
-    title: "Arca | Serviço de Convivência",
-    description: `A Arca é a nossa OSC (Organização da Sociedade Civil) que atua trabalhando com crianças vulneráveis na cidade de Vinhedo. São 3 unidades espalhadas pela cidade trabalhando com mais de 250 crianças. Você pode ajudar a ARCA de diversas formas:\n\n- Sendo um voluntário e participando de suas atividades\n- Sendo um padrinho colaborando financeiramente\n- Doando a sua Nota Fiscal Paulista\n\nVenha fazer parte deste projeto maravilhoso.`,
-    images: [
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
-    ]
+      titulo: "Arca | Serviço de Convivência",
+      descricao: "A Arca é a nossa OSC (Organização da Sociedade Civil) que atua com crianças vulneráveis em Vinhedo. São 3 unidades espalhadas pela cidade trabalhando com mais de 250 crianças. Você pode ajudar de diversas formas:",
+      lista: [
+        "Sendo um voluntário e participando das atividades",
+        "Sendo um padrinho colaborando financeiramente",
+        "Doando a sua Nota Fiscal Paulista"
+      ],
+      imagens: [
+        "/assets/placeholder.jpg",
+        "/assets/placeholder.jpg",
+        "/assets/placeholder.jpg"
+      ],
+      urlProjeto:{
+        "instagram": "https://arcavinhedo.com.br/",
+        "site": "https://www.instagram.com/arcavinhedo/",
+        "whatsapp": "wa.me/5511999999999",
+        "doacao": "",
+        } 
     },
     {
-    id: 5,
-    title: "Arca | Casa de Acolhimento",
-    description: `Além das 3 unidades da ARCA, nós também somos responsáveis em gerenciar a Casa de Acolhimento da Cidade. Lá, crianças em situação de alta vulnerabilidade, muitas vezes tiradas do convívio familiar, têm como moradia a nossa casa tão especial.`,
-    images: [        
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',
-        '/assets/placeholder.jpg',]
+        titulo: "Arca | Casa de Acolhimento",
+        descricao: "Gerenciamos também a Casa de Acolhimento da Cidade. Crianças em situação de alta vulnerabilidade, muitas vezes tiradas do convívio familiar, moram nessa casa especial.",
+        imagens: [
+            "/assets/placeholder.jpg",
+            "/assets/placeholder.jpg",
+            "/assets/placeholder.jpg"
+        ],
+        urlProjeto:{
+            "instagram": "https://arcavinhedo.com.br/",
+            "site": "https://www.instagram.com/arcavinhedo/",
+            "whatsapp": "wa.me/5511999999999",
+            "doacao": "site.com/doacao",
+        } 
+    },
+    {
+        titulo: "Missionários Apoiados Ibaviva",
+        descricao: "A Ibaviva também apoia, missionários transculturais em diversos locais pelo mundo. Ao todo temos apoiado 7 frentes missionárias.",
+        imagens: [
+            "/assets/placeholder.jpg",
+            "/assets/placeholder2.jpg",
+            "/assets/placeholder2.jpg"
+        ],
+        urlProjeto:{
+            "instagram": "https://arcavinhedo.com.br/",
+            "site": "https://www.instagram.com/arcavinhedo/",
+            "whatsapp": "wa.me/5511999999999",
+            "doacao": "site.com/doacao",
+            } 
     }
-  ];
+  ]
+
