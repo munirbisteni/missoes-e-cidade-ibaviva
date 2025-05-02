@@ -6,6 +6,8 @@ import Apresentation from "./sections/Apresentation";
 import ProjetosCarousel from "./sections/Projects";
 import Missionaries from "./sections/Missionaries";
 import Footer from "./sections/Footer";
+import { Analytics } from "@vercel/analytics/react"
+
 const App = () => {
   return (
     <div>
@@ -15,6 +17,7 @@ const App = () => {
       <ProjetosCarousel />
       <Missionaries />
       <Footer />
+      <Analytics />
     </div>
   );
 };
