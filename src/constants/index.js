@@ -1,23 +1,18 @@
 export const navLinks = [
     {
         id: 1,
-        name: 'Home',
-        href: '#home',
+        name: 'Projetos',
+        href: '#projetos',
     },
     {
         id: 2,
-        name: 'About',
-        href: '#about',
+        name: 'Missionários',
+        href: '#missionarios',
     },
     {
         id: 3,
-        name: 'Work',
-        href: '#work',
-    },
-    {
-        id: 4,
-        name: 'Contact',
-        href: '#contact',
+        name: 'Contato',
+        href: 'https://wa.me/5519991100133',
     },
 ];
 
@@ -127,7 +122,7 @@ export const projetos = [
         descricao:"Lara e Gui são membros da Ibaviva e missionários da Sepal Brasil. Gui está concluindo sua graduação em Teologia. E Lara é Educadora e Professora. Ao longo dos últimos cinco anos, ambos têm se dedicado constantemente ao serviço dos ministérios  na Iba, e ao aprimoramento de seus estudos, com o objetivo de se desenvolverem e estarem mais preparados para a missão. Atualmente, eles atuam no ministério de ensino (Crescer e Ministério de Mulheres), na frente transcultural do ministério de missões e lideram um pequeno grupo de jovens adultos. Agora, estão se preparando para voltarem para o Reino Unido (onde se conheceram em missão), com o propósito de levar o Evangelho.",
         contato:{
             "instagram": ["@laracain", "@guicain"],
-            "telefone": ["(19)99995-0563", "(19)98450-0923"],
+            "telefone": ["(19)99995-0563 (lara)", "(19)98450-0923 (gui)"],
         },
         loc: [{
             lat: 51.5072,

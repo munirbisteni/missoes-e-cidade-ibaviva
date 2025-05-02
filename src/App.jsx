@@ -5,6 +5,7 @@ import Banner from './sections/Banner'
 import Apresentation from './sections/Apresentation'
 import ProjetosCarousel from './sections/Projects'
 import Missionaries from './sections/Missionaries'
+import Footer from './sections/Footer'
 const App = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const App = () => {
         <Apresentation />
         <ProjetosCarousel />
         <Missionaries />
+        <Footer/>
     </div>
   )
 }

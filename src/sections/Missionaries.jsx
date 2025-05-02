@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { missionarios } from '../constants';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import Globe from 'react-globe.gl';
 import * as THREE from 'three';
 
@@ -89,7 +89,7 @@ const Misisonaries = () => {
   };
 
   return (
-    <section className="relative overflow-hidden py-16 md:ml-60">
+    <section id="missionarios" className="relative overflow-hidden py-16 md:ml-60">
       {/* Layout para desktop - mantém o design original */}
       <div className="hidden md:block">
         <h2 className="text-5xl font-bold text-primary mb-10 ml-70 text-left">
@@ -135,7 +135,9 @@ const Misisonaries = () => {
             "
           >
             <Swiper
-              modules={[Pagination, Navigation]}
+              loop
+              autoplay={{ delay: 10000, disableOnInteraction: false }}
+              modules={[Pagination, Navigation, Autoplay]}
               pagination={{ clickable: true }}
               slidesPerView={1}
               spaceBetween={20}
