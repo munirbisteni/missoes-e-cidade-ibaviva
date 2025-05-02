@@ -9,8 +9,7 @@ const Apresentation = () => {
   return (
     <section className="py-12 px-6 md:px-16¢¢ max-w-4xl mx-auto mb-0 pb-0">
       <h2 className="block md:hidden text-2xl font-semibold text-primary mb-6">
-        Um ministério que existe para capacitar e discipular os membros da
-        Ibaviva no entendimento e participação da missão de Deus para o mundo.
+        Um ministério que capacita e discipula os membros da Ibaviva no entendimento e na participação da missão de Deus para o mundo.
       </h2>
 
       {/* Acordeão para celular */}
@@ -62,18 +61,13 @@ const Apresentation = () => {
       {/* Para desktop: conteúdo sempre visível */}
       <div className="hidden md:block">
         <p className="text-lg md:text-xl text-secondary mb-4">
-          Desenvolvendo uma série de ações como trabalhos sociais, viagens
-          missionárias e movimentos de expansão do evangelho.
+          Atuamos em trabalhos sociais, viagens missionárias e movimentos de expansão do evangelho.
         </p>
         <p className="text-lg md:text-xl text-secondary mb-4">
-          Entendendo as preocupações da cidade e seus problemas. Envolvidos em
-          escolas, empresas, comunidades carentes e trabalho com crianças
-          vulneráveis.
+          Identificamos as necessidades da cidade e atuamos em escolas, empresas, comunidades carentes e em projetos com crianças vulneráveis.
         </p>
         <p className="text-lg md:text-xl text-secondary mb-4">
-          Fazemos tudo isso para compartilhar o Evangelho de Cristo e sermos um
-          exemplo vivo do seu amor. E por meio dele promover uma transformação
-          da cidade de Vinhedo, regiões ao redor e até os confins da terra.
+          Fazemos tudo isso para compartilhar o Evangelho de Cristo e ser um exemplo vivo do Seu amor, promovendo, por meio dele, a transformação de Vinhedo, das regiões vizinhas e até dos confins da terra.
         </p>
       </div>
     </section>

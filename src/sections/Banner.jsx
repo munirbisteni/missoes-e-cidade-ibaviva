@@ -41,9 +41,7 @@ const Banner = () => {
           {/* Texto à esquerda */}
           <div className="flex flex-col justify-center items-end text-right w-1/4 pr-6">
             <p className="text-lg text-gray-200 font-bold">
-              Um ministério que existe para capacitar e discipular os membros da
-              Ibaviva no entendimento e participação da missão de Deus para o
-              mundo.
+              Um ministério que capacita e discipula os membros da Ibaviva no entendimento e na participação da missão de Deus para o mundo.
             </p>
           </div>
         </div>
