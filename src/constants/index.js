@@ -102,9 +102,12 @@ export const projetos = [
         titulo: "Missionários Apoiados Ibaviva",
         descricao: "A Ibaviva também apoia missionários transculturais em diversos países. Até o momento, são sete frentes missionárias apoiadas.",
         imagens: [
-            "/assets/placeholder.jpg",
-            "/assets/placeholder2.jpg",
-            "/assets/placeholder2.jpg"
+            "/assets/missionarios1.jpeg",
+            "/assets/missionarios2.jpeg",
+            "/assets/missionarios3.jpeg",
+            "/assets/missionarios4.jpeg",
+            "/assets/missionarios5.jpeg",
+            "/assets/missionarios6.jpeg"
         ],
         urlProjeto:{
             "instagram": "https://arcavinhedo.com.br/",

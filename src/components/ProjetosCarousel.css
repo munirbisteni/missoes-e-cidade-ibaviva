@@ -10,3 +10,7 @@
     filter: none;
     opacity: 1;
   }
+  .modal-swiper .swiper-button-next,
+  .modal-swiper .swiper-button-prev {
+    color: white !important;
+  }

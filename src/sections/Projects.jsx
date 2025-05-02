@@ -1,5 +1,4 @@
 // src/components/ProjetosCarousel.js
-
 import React, { useState, useRef } from "react";
 import { projetos } from "../constants";
 
@@ -12,14 +11,8 @@ import "../components/ProjetosCarousel.css";
 
 const ProjetosCarousel = () => {
   const [modalInfo, setModalInfo] = useState({ projIdx: null, imgIdx: null });
-
   const [modalImage, setModalImage] = useState(null);
-  const openModal = (projIdx, imgIdx) => {
-    setModalInfo({ projIdx, imgIdx });
-  };
-  const closeModal = () => {
-    setModalInfo({ projIdx: null, imgIdx: null });
-  };
+  // Alterando para usar o estado corretamente
   const [imgIndex, setImgIndex] = useState(projetos.map(() => 0));
   const swiperRef = useRef();
 
@@ -37,17 +30,37 @@ const ProjetosCarousel = () => {
     return notVisibleIndex;
   };
 
-  let lastRealIndex = 0;
+  // Variável para armazenar o último índice real
+  const lastRealIndexRef = useRef(0);
+
   const handleSlideChange = (swiper) => {
     const currentIndex = swiper.realIndex; // Índice do slide atual
-    if (currentIndex != lastRealIndex) {
-      lastRealIndex = currentIndex;
-      let idx6 = calculateNotVisibleIndex(currentIndex);
-      imgIndex[idx6] =
-        imgIndex[idx6] + 1 >= projetos[idx6].imagens.length
-          ? 0
-          : imgIndex[idx6] + 1;
+    
+    // Verificar se o índice mudou
+    if (currentIndex !== lastRealIndexRef.current) {
+      lastRealIndexRef.current = currentIndex;
+      
+      // Calcular qual índice deve ser atualizado
+      let idxToUpdate = calculateNotVisibleIndex(currentIndex);
+      
+      // Criar uma cópia do array de índices atual
+      const newImgIndex = [...imgIndex];
+      
+      // Atualizar o índice específico
+      newImgIndex[idxToUpdate] = 
+        (newImgIndex[idxToUpdate] + 1) % projetos[idxToUpdate].imagens.length;
+      
+      // Atualizar o estado com o novo array
+      setImgIndex(newImgIndex);
     }
+  };
+
+  const openModal = (projIdx, imgIdx) => {
+    setModalInfo({ projIdx, imgIdx });
+  };
+  
+  const closeModal = () => {
+    setModalInfo({ projIdx: null, imgIdx: null });
   };
 
   return (
@@ -62,7 +75,7 @@ const ProjetosCarousel = () => {
           loop
           modules={[Navigation, Autoplay]}
           navigation
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           centeredSlides
           centeredSlidesBounds
           slidesPerView={5}
@@ -78,13 +91,21 @@ const ProjetosCarousel = () => {
                   <p className="text-gray-600 text-sm flex-1 whitespace-pre-line">
                     {proj.descricao}
                   </p>
+                  {/* Lista para desktop */}
+                  {proj.lista && (
+                    <ul className="list-disc ml-6 mt-2 text-gray-600 text-sm">
+                      {proj.lista.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="flex flex-wrap gap-2 mt-4">
                     {Object.entries(proj.urlProjeto).map(([k, url]) =>
                       url ? (
                         <a
                           key={k}
                           href={url}
-                          target="_blank"
+                          
                           rel="noopener noreferrer"
                           className="text-white-600 underline text-xs"
                         >
@@ -94,10 +115,12 @@ const ProjetosCarousel = () => {
                     )}
                   </div>
                 </div>
+                {/* Adicionando cursor-pointer e onClick para abrir o modal */}
                 <img
                   src={proj.imagens[imgIndex[idx]]}
                   alt={proj.titulo}
-                  className="w-full h-40 object-cover"
+                  className="w-full h-40 object-cover cursor-pointer"
+                  onClick={() => openModal(idx, imgIndex[idx])}
                 />
               </div>
             </SwiperSlide>
@@ -129,7 +152,7 @@ const ProjetosCarousel = () => {
                     <a
                       key={k}
                       href={url}
-                      target="_blank"
+                      
                       rel="noopener noreferrer"
                       className="text-blue-600 underline text-sm"
                     >
@@ -163,53 +186,94 @@ const ProjetosCarousel = () => {
         ))}
       </div>
 
-      {/* Modal para mobile: agora com Swiper interno */}
+      {/* Modal para imagens (usado tanto para desktop quanto mobile) */}
       {modalInfo.projIdx !== null && (
         <div
           className="fixed inset-0 backdrop-blur-sm bg-black/50 flex items-center justify-center z-50"
           onClick={closeModal}
         >
           <div
-            className="relative w-auto max-w-[90vw] min-h-[80vh] max-h-[90vh]" // altura mínima e máxima
+            className="relative w-auto max-w-[90vw] min-h-[80vh] max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <Swiper
-              modules={[Pagination]}
-              pagination={{ clickable: true }}
-              initialSlide={modalInfo.imgIdx}
-              spaceBetween={10}
-              slidesPerView={1}
-              loop
-              centeredSlides
-              className="h-[80vh]"
-              style={{ flex: 1 }}
-            >
-              {projetos[modalInfo.projIdx].imagens.map((img, i) => (
-                <SwiperSlide
-                  key={i}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={`Imagem ${i + 1}`}
+            {/* Versão para desktop (com navegação) */}
+            <div className="hidden md:block h-full">
+              <Swiper
+                modules={[Pagination, Navigation]}
+                pagination={{ clickable: true }}
+                navigation
+                initialSlide={modalInfo.imgIdx}
+                spaceBetween={10}
+                slidesPerView={1}
+                loop
+                centeredSlides
+                className="h-[80vh] modal-swiper"
+                style={{ flex: 1 }}
+              >
+                {projetos[modalInfo.projIdx].imagens.map((img, i) => (
+                  <SwiperSlide
+                    key={i}
                     style={{
-                      maxHeight: "100%",
-                      maxWidth: "100%",
-                      objectFit: "contain",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
                     }}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                  >
+                    <img
+                      src={img}
+                      alt={`Imagem ${i + 1}`}
+                      style={{
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            
+            {/* Versão para mobile (sem navegação) */}
+            <div className="block md:hidden h-full">
+              <Swiper
+                modules={[Pagination]}
+                pagination={{ clickable: true }}
+                initialSlide={modalInfo.imgIdx}
+                spaceBetween={10}
+                slidesPerView={1}
+                loop
+                centeredSlides
+                className="h-[80vh]"
+                style={{ flex: 1 }}
+              >
+                {projetos[modalInfo.projIdx].imagens.map((img, i) => (
+                  <SwiperSlide
+                    key={i}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
+                  >
+                    <img
+                      src={img}
+                      alt={`Imagem ${i + 1}`}
+                      style={{
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
             <button
               onClick={closeModal}
-              className="absolute z-100 top-10 right-2 text-white text-2xl"
+              className="absolute z-100 top-10 right-2 text-white text-2xl md:text-6xl"
             >
               &times;
             </button>
