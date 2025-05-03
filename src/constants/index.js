@@ -18,120 +18,120 @@ export const navLinks = [
 
 // src/constants/projects.js
 export const projetos = [
-    {
-      titulo: "Projeto Bunekas",
-      descricao: "Todas as quartas-feiras, na Ibaviva, um grupo de pessoas se reúne para confeccionar bonecas. Essa oficina faz parte do Projeto Bunekas, que atua em educação, cuidado e prevenção ao abuso sexual infantil.",
+  {
+      titulo: "Arca | Casa de Acolhimento",
+      descricao: "Também gerenciamos a Casa de Acolhimento, que abriga crianças em situação de alta vulnerabilidade, muitas vezes afastadas do convívio familiar.",
       imagens: [
-        "/assets/bunekas1.webp",
-        "/assets/bunekas2.webp",
-        "/assets/bunekas3.webp",
-        "/assets/bunekas4.webp",
-        "/assets/bunekas5.webp",
-        "/assets/bunekas6.webp",
-        "/assets/bunekas7.webp",
-        "/assets/bunekas8.webp",
-        "/assets/bunekas9.webp",
-        "/assets/bunekas10.webp"
+          "/assets/abrigo1.webp",
+          "/assets/abrigo2.webp",
+          "/assets/abrigo3.webp",
+          "/assets/abrigo4.webp",
+          "/assets/abrigo5.webp"
       ],
       urlProjeto:{
-        // "instagram": "",
-        // "site": "https://www.instagram.com/arcavinhedo/",
-        // "whatsapp": "",
-        // "doacao": "",
-        } 
-    },
-    {
-      titulo: "Casa de Passagem",
-      descricao: "Todas as segundas-feiras, um grupo de homens se reúne na Casa de Passagem de Jundiaí, que abriga temporariamente pessoas em situação de rua e famílias em vulnerabilidade. O grupo oferece mensagem bíblica, momento de oração e apoio aos acolhidos.",
-      imagens: [
-        "/assets/passagem1.webp",
-        "/assets/passagem2.webp",
-        "/assets/passagem3.webp",
-        "/assets/passagem4.webp"
-      ],
-      urlProjeto:{
-        // "instagram": "https://arcavinhedo.com.br/",
-        // "site": "",
-        // "whatsapp": "",
-        // "doacao": "doacao.com",
-        } 
-    },
-    {
-      titulo: "Comunidade Vila Tupi",
-      descricao: "Um projeto que visa o desenvolvimento integral por meio do Evangelho do Reino. A equipe de Missões e Cidade se reúne semanalmente com a comunidade para juntos crescermos no conhecimento de Deus, na fé, no amor, e na comunhão.Tudo isso, com Louvor, Palavra, Oração e ações contextualizadas pra cada faixa etária.",
-      imagens: [
-        "/assets/tupi1.webp",
-        "/assets/tupi2.webp",
-        "/assets/tupi3.webp",
-        "/assets/tupi4.webp",
-        "/assets/tupi5.webp",
-        "/assets/tupi6.webp"
-      ],
-      urlProjeto:{
-        // "instagram": "https://arcavinhedo.com.br/",
-        // "site": "https://www.instagram.com/arcavinhedo/",
-        // "whatsapp": "",
-        // "doacao": "",
-        } 
-    },
-    {
+          // "instagram": "https://arcavinhedo.com.br/",
+          // "site": "https://www.instagram.com/arcavinhedo/",
+          // "whatsapp": "wa.me/5511999999999",
+          // "doacao": "site.com/doacao",
+      } 
+  },
+  {
       titulo: "Arca | Serviço de Convivência",
       descricao: "A Arca é nossa Organização da Sociedade Civil (OSC) que atende crianças em situação de vulnerabilidade em Vinhedo. São três unidades, com mais de 250 atendimentos mensais. Você pode colaborar por meio de:",
       lista: [
-        "Sendo um voluntário e participando das atividades",
-        "Sendo um padrinho colaborando financeiramente",
-        "Doando a sua Nota Fiscal Paulista"
+          "Sendo um voluntário e participando das atividades",
+          "Sendo um padrinho colaborando financeiramente",
+          "Doando a sua Nota Fiscal Paulista"
       ],
       imagens: [
-        "/assets/arca2.webp",
-        "/assets/arca1.webp",
-        "/assets/arca3.webp",	
-        "/assets/arca4.webp"
+          "/assets/arca2.webp",
+          "/assets/arca1.webp",
+          "/assets/arca3.webp",	
+          "/assets/arca4.webp"
       ],
       urlProjeto:{
-        "instagram": "https://arcavinhedo.com.br/",
-        "site": "https://www.instagram.com/arcavinhedo/"
-        // "whatsapp": "wa.me/5511999999999",
-        // "doacao": "",
-        } 
-    },
-    {
-        titulo: "Arca | Casa de Acolhimento",
-        descricao: "Também gerenciamos a Casa de Acolhimento, que abriga crianças em situação de alta vulnerabilidade, muitas vezes afastadas do convívio familiar.",
-        imagens: [
-            "/assets/abrigo1.webp",
-            "/assets/abrigo2.webp",
-            "/assets/abrigo3.webp",
-            "/assets/abrigo4.webp",
-            "/assets/abrigo5.webp"
-        ],
-        urlProjeto:{
-            // "instagram": "https://arcavinhedo.com.br/",
-            // "site": "https://www.instagram.com/arcavinhedo/",
-            // "whatsapp": "wa.me/5511999999999",
-            // "doacao": "site.com/doacao",
-        } 
-    },
-    {
-        titulo: "Missionários Apoiados Ibaviva",
-        descricao: "A Ibaviva também apoia missionários transculturais em diversos países. Até o momento, são sete frentes missionárias apoiadas.",
-        imagens: [
-            "/assets/missionarios1.webp",
-            "/assets/missionarios2.webp",
-            "/assets/missionarios3.webp",
-            "/assets/missionarios4.webp",
-            "/assets/missionarios5.webp",
-            "/assets/missionarios6.webp",
-            "/assets/missionarios7.webp"
-        ],
-        urlProjeto:{
-            // "instagram": "https://arcavinhedo.com.br/",
-            // "site": "https://www.instagram.com/arcavinhedo/",
-            // "whatsapp": "wa.me/5511999999999",
-            // "doacao": "",
-            } 
-    }
-  ]
+          "instagram": "https://arcavinhedo.com.br/",
+          "site": "https://www.instagram.com/arcavinhedo/"
+          // "whatsapp": "wa.me/5511999999999",
+          // "doacao": "",
+      } 
+  },
+  {
+      titulo: "Casa de Passagem",
+      descricao: "Todas as segundas-feiras, um grupo de homens se reúne na Casa de Passagem de Jundiaí, que abriga temporariamente pessoas em situação de rua e famílias em vulnerabilidade. O grupo oferece mensagem bíblica, momento de oração e apoio aos acolhidos.",
+      imagens: [
+          "/assets/passagem1.webp",
+          "/assets/passagem2.webp",
+          "/assets/passagem3.webp",
+          "/assets/passagem4.webp"
+      ],
+      urlProjeto:{
+          // "instagram": "https://arcavinhedo.com.br/",
+          // "site": "",
+          // "whatsapp": "",
+          // "doacao": "doacao.com",
+      } 
+  },
+  {
+      titulo: "Comunidade Vila Tupi",
+      descricao: "Um projeto que visa o desenvolvimento integral por meio do Evangelho do Reino. A equipe de Missões e Cidade se reúne semanalmente com a comunidade para juntos crescermos no conhecimento de Deus, na fé, no amor, e na comunhão.Tudo isso, com Louvor, Palavra, Oração e ações contextualizadas pra cada faixa etária.",
+      imagens: [
+          "/assets/tupi1.webp",
+          "/assets/tupi2.webp",
+          "/assets/tupi3.webp",
+          "/assets/tupi4.webp",
+          "/assets/tupi5.webp",
+          "/assets/tupi6.webp"
+      ],
+      urlProjeto:{
+          // "instagram": "https://arcavinhedo.com.br/",
+          // "site": "https://www.instagram.com/arcavinhedo/",
+          // "whatsapp": "",
+          // "doacao": "",
+      } 
+  },
+  {
+      titulo: "Missionários Apoiados Ibaviva",
+      descricao: "A Ibaviva também apoia missionários transculturais em diversos países. Até o momento, são sete frentes missionárias apoiadas.",
+      imagens: [
+          "/assets/missionarios1.webp",
+          "/assets/missionarios2.webp",
+          "/assets/missionarios3.webp",
+          "/assets/missionarios4.webp",
+          "/assets/missionarios5.webp",
+          "/assets/missionarios6.webp",
+          "/assets/missionarios7.webp"
+      ],
+      urlProjeto:{
+          // "instagram": "https://arcavinhedo.com.br/",
+          // "site": "https://www.instagram.com/arcavinhedo/",
+          // "whatsapp": "wa.me/5511999999",
+          // "doacao": "",
+      } 
+  },
+  {
+      titulo: "Projeto Bunekas",
+      descricao: "Todas as quartas-feiras, na Ibaviva, um grupo de pessoas se reúne para confeccionar bonecas. Essa oficina faz parte do Projeto Bunekas, que atua em educação, cuidado e prevenção ao abuso sexual infantil.",
+      imagens: [
+          "/assets/bunekas1.webp",
+          "/assets/bunekas2.webp",
+          "/assets/bunekas3.webp",
+          "/assets/bunekas4.webp",
+          "/assets/bunekas5.webp",
+          "/assets/bunekas6.webp",
+          "/assets/bunekas7.webp",
+          "/assets/bunekas8.webp",
+          "/assets/bunekas9.webp",
+          "/assets/bunekas10.webp"
+      ],
+      urlProjeto:{
+          // "instagram": "",
+          // "site": "https://www.instagram.com/arcavinhedo/",
+          // "whatsapp": "",
+          // "doacao": "",
+      } 
+  }
+]
 
 
   export const missionarios = [
