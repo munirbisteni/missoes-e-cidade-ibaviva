@@ -25,7 +25,13 @@ export const projetos = [
         "/assets/bunekas1.webp",
         "/assets/bunekas2.webp",
         "/assets/bunekas3.webp",
-        "/assets/bunekas4.webp"
+        "/assets/bunekas4.webp",
+        "/assets/bunekas5.webp",
+        "/assets/bunekas6.webp",
+        "/assets/bunekas7.webp",
+        "/assets/bunekas8.webp",
+        "/assets/bunekas9.webp",
+        "/assets/bunekas10.webp"
       ],
       urlProjeto:{
         // "instagram": "",
