@@ -46,6 +46,8 @@ const Missionaries = () => {
   const [showFullscreen, setShowFullscreen] = useState(false);
   const globeRefDesktop = useRef();
   const globeRefMobile = useRef();
+  const fullscreenModalRef = useRef(); // <-- Adicione aqui
+
   const globeRefFullscreen = useRef();
   const CLOUDS_IMG_URL = "./assets/clouds.png"; // from https://github.com/turban/webgl-earth
   const CLOUDS_ALT = 0.004;
@@ -73,7 +75,7 @@ const Missionaries = () => {
       // Calcula o próximo índice (circular)
       const nextIdx = (mobilePinIdx + 1) % missionarios.length;
       setMobilePinIdx(nextIdx);
-      
+
       // Atualiza o globo mobile com o novo ponto
       if (globeRefMobile.current) {
         const { lat, lng } = missionarios[nextIdx].loc[0];
@@ -88,7 +90,8 @@ const Missionaries = () => {
   // Configura os globos
   useEffect(() => {
     if (globeRefDesktop.current) setupGlobe(globeRefDesktop.current);
-    if (globeRefMobile.current) setupGlobe(globeRefMobile.current, mobilePinIdx); // Usa o índice específico para mobile
+    if (globeRefMobile.current)
+      setupGlobe(globeRefMobile.current, mobilePinIdx); // Usa o índice específico para mobile
   }, []);
 
   // Configura o globo fullscreen quando ele é mostrado
@@ -104,11 +107,12 @@ const Missionaries = () => {
     if (showFullscreen) {
       // Quando o modal é aberto, reseta para o primeiro missionário
       setCurrentIdx(0);
-      
+
       // Aguarda o próximo ciclo de renderização para garantir que o Swiper esteja disponível
       setTimeout(() => {
         // Encontra o Swiper dentro do modal e o move para o primeiro slide
-        const swiperInstance = document.querySelector(".missionary-swiper")?.swiper;
+        const swiperInstance =
+          document.querySelector(".missionary-swiper")?.swiper;
         if (swiperInstance) {
           swiperInstance.slideTo(0);
         }
@@ -214,7 +218,7 @@ const Missionaries = () => {
     const formattedPhone = phone.replace(/\D/g, "");
     return `https://wa.me/${formattedPhone}`;
   };
-  
+
   // Renderização dos elementos de blur para o botão Explorar
   // Usando elementos pré-gerados fora do ciclo de renderização
   const ExploreButtonBlurEffect = React.memo(() => (
@@ -239,7 +243,7 @@ const Missionaries = () => {
       </div>
     </>
   ));
-  
+
   return (
     <section
       id="missionarios"
@@ -364,8 +368,15 @@ const Missionaries = () => {
           {/* Botão Explorar com efeito blur verde água e azul */}
           <button
             onClick={() => {
-              // Apenas abre o modal, o useEffect cuidará de resetar para o primeiro missionário
               setShowFullscreen(true);
+              setTimeout(() => {
+                if (
+                  fullscreenModalRef.current &&
+                  fullscreenModalRef.current.requestFullscreen
+                ) {
+                  fullscreenModalRef.current.requestFullscreen();
+                }
+              }, 100);
             }}
             className="
               relative overflow-hidden
@@ -400,10 +411,12 @@ const Missionaries = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Modal de tela cheia para mobile */}
       {showFullscreen && (
-        <div className="md:hidden fixed inset-0 bg-black z-50 flex flex-col">
+        <div     
+          ref={fullscreenModalRef} // <-- Adicione aqui!
+          className="md:hidden fixed inset-0 bg-black z-50 flex flex-col">
           {/* Botão de fechar */}
           <button
             onClick={() => setShowFullscreen(false)}
@@ -457,9 +470,10 @@ const Missionaries = () => {
                     onClick={() => {
                       // Atualiza o índice atual
                       setCurrentIdx(index);
-                      
+
                       // Encontrar a instância do Swiper e ir para o slide
-                      const swiperInstance = document.querySelector(".missionary-swiper")?.swiper;
+                      const swiperInstance =
+                        document.querySelector(".missionary-swiper")?.swiper;
                       if (swiperInstance) {
                         swiperInstance.slideTo(index);
                       }
