@@ -1,0 +1,46 @@
+@keyframes pulse-slow {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  /* Estilização dos bullets personalizados no estilo Apple */
+  .pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .pagination-bullet-active {
+    width: 14px;
+    height: 14px;
+    background-color: #2A9D8F; /* Cor azul-esverdeada ativa */
+    box-shadow: 0 0 10px rgba(42, 157, 143, 0.5); /* Sutil brilho ao redor */
+  }
+  
+  /* Efeito de hover */
+  .pagination-bullet:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .pagination-bullet-active:hover {
+    background-color: #4ECDC4; /* Versão mais clara quando hover */
+  }
