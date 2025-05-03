@@ -32,7 +32,7 @@
   .pagination-bullet-active {
     width: 14px;
     height: 14px;
-    background-color: #2A9D8F; /* Cor azul-esverdeada ativa */
+    background-color: #fff; /* Cor azul-esverdeada ativa */
     box-shadow: 0 0 10px rgba(42, 157, 143, 0.5); /* Sutil brilho ao redor */
   }
   
@@ -44,3 +44,39 @@
   .pagination-bullet-active:hover {
     background-color: #4ECDC4; /* Versão mais clara quando hover */
   }
+
+  /* Adicione ao seu arquivo Missionaries.css */
+
+/* Estilos para o Swiper de missionários na versão desktop */
+.missionaries-desktop-swiper {
+  display: flex;
+  flex-direction: column;
+}
+
+.missionaries-desktop-swiper .swiper-wrapper {
+  order: 1;
+}
+
+.swiper-pagination-custom {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--primary-color, #0D2B4B);
+  transform: scale(1.2);
+}

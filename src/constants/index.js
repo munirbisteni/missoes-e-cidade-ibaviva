@@ -89,8 +89,8 @@ export const projetos = [
         "/assets/arca4.webp"
       ],
       urlProjeto:{
-        // "instagram": "https://arcavinhedo.com.br/",
-        // "site": "https://www.instagram.com/arcavinhedo/",
+        "instagram": "https://arcavinhedo.com.br/",
+        "site": "https://www.instagram.com/arcavinhedo/"
         // "whatsapp": "wa.me/5511999999999",
         // "doacao": "",
         } 
@@ -249,7 +249,7 @@ export const projetos = [
     {
       nome: ["Marcos Amado"],
       descricao:
-        "Marcos Amado é missionário da Sepal, com mais de 20 anos de experiência transcultural. Iniciou seu preparo missionário em 1981 no navio Doulos, da Operação Mobilização, onde permaneceu por três anos. Posteriormente, foi enviado pela Igreja Batista do Morumbi, juntamente com sua família, para trabalhar entre os muçulmanos do Norte da África, onde viveu por oito anos. Após esse período, concluiu sua graduação em Teologia no All Nations Christian College, no Reino Unido. Em seguida, presidiu a organização missionária PM Internacional e a ONG Pró Mundis, ambas sediadas no sul da Espanha, onde foi ordenado ao pastorado pela Convenção Batista Espanhola. Em 2004, retornou ao All Nations Christian College para realizar um mestrado em Missiologia, com especialização em Estudos Islâmicos. Regressou ao Brasil em 2006 e serviu por cinco anos como pastor de missões na Igreja Batista do Morumbi. Foi diretor para a América Latina do Movimento de Lausanne e, durante três anos, cursou 'Estudos Avançados em Religiões e Culturas do Oriente Médio' no Institute of Middle East Studies, em Beirute, Líbano. Como parte desse processo, realizou um módulo especial oferecido pela Universidade de Notre Dame (EUA) sobre a formação e origens do Alcorão. Atualmente, é fundador e diretor do Centro de Reflexão Missiológica Martureo e professor de Missões no Seminário Teológico Servo de Cristo, em São Paulo.",
+      "Marcos Amado é missionário da Sepal com mais de 20 anos de experiência transcultural. Atuou entre muçulmanos no Norte da África, presidiu organizações missionárias na Espanha e foi pastor de missões na Igreja Batista do Morumbi. Marcos é mestre em Missiologia com foco em Estudos Islâmicos, fundador do Centro Martureo e professor de Missões no Seminário Teológico Servo de Cristo, em São Paulo.",
       contato: {
         instagram: ["@amado_marcos"],
         telefone: ["(11) 99590-3381"],
