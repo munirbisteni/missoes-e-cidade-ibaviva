@@ -173,24 +173,23 @@ export const projetos = [
       ],
     },
     {
-      nome: ["Michelli Bordinhon"],
-      descricao: 
-        "Michelli Bordinhon é fundadora do Projeto Bunekas, que atua na prevenção do abuso sexual infantil promovendo a dignidade do brincar e a autoestima das crianças. Por meio da confecção e entrega de bonecas, já distribuiu mais de 100 mil unidades com a colaboração de 40 grupos de artesãs em todo o Brasil. Um dos grupos se reúne na Ibaviva todas as quartas-feiras, sendo responsável pela produção das bonecas. Ao orar pelo projeto, lembre-se das senhoras da nossa igreja que se dedicam a ele.",
+      nome: ["Marcos Amado"],
+      descricao:
+      "Marcos Amado é missionário da Sepal com mais de 20 anos de experiência transcultural. Atuou entre muçulmanos no Norte da África, presidiu organizações missionárias na Espanha e foi pastor de missões na Igreja Batista do Morumbi. Marcos é mestre em Missiologia com foco em Estudos Islâmicos, fundador do Centro Martureo e professor de Missões no Seminário Teológico Servo de Cristo, em São Paulo.",
       contato: {
-        instagram: ["@michellibordinhon", "@projetobunekas"],
-        telefone: ["(11) 97263-8207"],
+        instagram: ["@amado_marcos"],
+        telefone: ["(11) 99590-3381"],
       },
       loc: [
         {
-          lat: 3.444198,
-          lng: -72.883785,
-          text: "Michelli Bordinhon",
+          lat: -23.5505,
+          lng: -46.6333,
+          text: "Marcos Amado",
           color: "Red",
           size: 30,
         },
       ],
     },
-  
     {
       nome: ["Matilde"],
       descricao: 
@@ -208,7 +207,24 @@ export const projetos = [
         },
       ],
     },
-  
+    {
+      nome: ["Michelli Bordinhon"],
+      descricao: 
+        "Michelli Bordinhon é fundadora do Projeto Bunekas, que atua na prevenção do abuso sexual infantil promovendo a dignidade do brincar e a autoestima das crianças. Por meio da confecção e entrega de bonecas, já distribuiu mais de 100 mil unidades com a colaboração de 40 grupos de artesãs em todo o Brasil. Um dos grupos se reúne na Ibaviva todas as quartas-feiras, sendo responsável pela produção das bonecas. Ao orar pelo projeto, lembre-se das senhoras da nossa igreja que se dedicam a ele.",
+      contato: {
+        instagram: ["@michellibordinhon", "@projetobunekas"],
+        telefone: ["(11) 97263-8207"],
+      },
+      loc: [
+        {
+          lat: 3.444198,
+          lng: -72.883785,
+          text: "Michelli Bordinhon",
+          color: "Red",
+          size: 30,
+        },
+      ],
+    },
     {
       nome: ["Paulo e Adriana"],
       descricao: 
@@ -245,23 +261,5 @@ export const projetos = [
           size: 30,
         },
       ],
-    },
-    {
-      nome: ["Marcos Amado"],
-      descricao:
-      "Marcos Amado é missionário da Sepal com mais de 20 anos de experiência transcultural. Atuou entre muçulmanos no Norte da África, presidiu organizações missionárias na Espanha e foi pastor de missões na Igreja Batista do Morumbi. Marcos é mestre em Missiologia com foco em Estudos Islâmicos, fundador do Centro Martureo e professor de Missões no Seminário Teológico Servo de Cristo, em São Paulo.",
-      contato: {
-        instagram: ["@amado_marcos"],
-        telefone: ["(11) 99590-3381"],
-      },
-      loc: [
-        {
-          lat: -23.5505,
-          lng: -46.6333,
-          text: "Marcos Amado",
-          color: "Red",
-          size: 30,
-        },
-      ],
-    }    
+    }
   ];
