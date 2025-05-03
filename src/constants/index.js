@@ -22,45 +22,50 @@ export const projetos = [
       titulo: "Projeto Bunekas",
       descricao: "Todas as quartas-feiras, na Ibaviva, um grupo de pessoas se reúne para confeccionar bonecas. Essa oficina faz parte do Projeto Bunekas, que atua em educação, cuidado e prevenção ao abuso sexual infantil.",
       imagens: [
-        "/assets/placeholder.jpg",
-        "/assets/placeholder.jpg",
-        "/assets/placeholder.jpg"
+        "/assets/bunekas1.webp",
+        "/assets/bunekas2.webp",
+        "/assets/bunekas3.webp",
+        "/assets/bunekas4.webp"
       ],
       urlProjeto:{
-        "instagram": "",
-        "site": "https://www.instagram.com/arcavinhedo/",
-        "whatsapp": "",
-        "doacao": "",
+        // "instagram": "",
+        // "site": "https://www.instagram.com/arcavinhedo/",
+        // "whatsapp": "",
+        // "doacao": "",
         } 
     },
     {
       titulo: "Casa de Passagem",
       descricao: "Todas as segundas-feiras, um grupo de homens se reúne na Casa de Passagem de Jundiaí, que abriga temporariamente pessoas em situação de rua e famílias em vulnerabilidade. O grupo oferece mensagem bíblica, momento de oração e apoio aos acolhidos.",
       imagens: [
-        "/assets/placeholder.jpg",
-        "/assets/placeholder.jpg",
-        "/assets/placeholder.jpg"
+        "/assets/passagem1.webp",
+        "/assets/passagem2.webp",
+        "/assets/passagem3.webp",
+        "/assets/passagem4.webp"
       ],
       urlProjeto:{
-        "instagram": "https://arcavinhedo.com.br/",
-        "site": "",
-        "whatsapp": "",
-        "doacao": "doacao.com",
+        // "instagram": "https://arcavinhedo.com.br/",
+        // "site": "",
+        // "whatsapp": "",
+        // "doacao": "doacao.com",
         } 
     },
     {
       titulo: "Comunidade Vila Tupi",
-      descricao: "Um projeto de assistência social e evangelismo em Jundiaí. A equipe Missões e Cidade se reúne semanalmente para louvor, pregação, grupos de estudo e atividades de apoio social.",
+      descricao: "Um projeto que visa o desenvolvimento integral por meio do Evangelho do Reino. A equipe de Missões e Cidade se reúne semanalmente com a comunidade para juntos crescermos no conhecimento de Deus, na fé, no amor, e na comunhão.Tudo isso, com Louvor, Palavra, Oração e ações contextualizadas pra cada faixa etária.",
       imagens: [
-        "/assets/placeholder.jpg",
-        "/assets/placeholder2.jpg",
-        "/assets/placeholder2.jpg"
+        "/assets/tupi1.webp",
+        "/assets/tupi2.webp",
+        "/assets/tupi3.webp",
+        "/assets/tupi4.webp",
+        "/assets/tupi5.webp",
+        "/assets/tupi6.webp"
       ],
       urlProjeto:{
-        "instagram": "https://arcavinhedo.com.br/",
-        "site": "https://www.instagram.com/arcavinhedo/",
-        "whatsapp": "",
-        "doacao": "",
+        // "instagram": "https://arcavinhedo.com.br/",
+        // "site": "https://www.instagram.com/arcavinhedo/",
+        // "whatsapp": "",
+        // "doacao": "",
         } 
     },
     {
@@ -72,48 +77,52 @@ export const projetos = [
         "Doando a sua Nota Fiscal Paulista"
       ],
       imagens: [
-        "/assets/placeholder.jpg",
-        "/assets/placeholder.jpg",
-        "/assets/placeholder.jpg"
+        "/assets/arca2.webp",
+        "/assets/arca1.webp",
+        "/assets/arca3.webp",	
+        "/assets/arca4.webp"
       ],
       urlProjeto:{
-        "instagram": "https://arcavinhedo.com.br/",
-        "site": "https://www.instagram.com/arcavinhedo/",
-        "whatsapp": "wa.me/5511999999999",
-        "doacao": "",
+        // "instagram": "https://arcavinhedo.com.br/",
+        // "site": "https://www.instagram.com/arcavinhedo/",
+        // "whatsapp": "wa.me/5511999999999",
+        // "doacao": "",
         } 
     },
     {
         titulo: "Arca | Casa de Acolhimento",
         descricao: "Também gerenciamos a Casa de Acolhimento, que abriga crianças em situação de alta vulnerabilidade, muitas vezes afastadas do convívio familiar.",
         imagens: [
-            "/assets/placeholder.jpg",
-            "/assets/placeholder.jpg",
-            "/assets/placeholder.jpg"
+            "/assets/abrigo1.webp",
+            "/assets/abrigo2.webp",
+            "/assets/abrigo3.webp",
+            "/assets/abrigo4.webp",
+            "/assets/abrigo5.webp"
         ],
         urlProjeto:{
-            "instagram": "https://arcavinhedo.com.br/",
-            "site": "https://www.instagram.com/arcavinhedo/",
-            "whatsapp": "wa.me/5511999999999",
-            "doacao": "site.com/doacao",
+            // "instagram": "https://arcavinhedo.com.br/",
+            // "site": "https://www.instagram.com/arcavinhedo/",
+            // "whatsapp": "wa.me/5511999999999",
+            // "doacao": "site.com/doacao",
         } 
     },
     {
         titulo: "Missionários Apoiados Ibaviva",
         descricao: "A Ibaviva também apoia missionários transculturais em diversos países. Até o momento, são sete frentes missionárias apoiadas.",
         imagens: [
-            "/assets/missionarios1.jpeg",
-            "/assets/missionarios2.jpeg",
-            "/assets/missionarios3.jpeg",
-            "/assets/missionarios4.jpeg",
-            "/assets/missionarios5.jpeg",
-            "/assets/missionarios6.jpeg"
+            "/assets/missionarios1.webp",
+            "/assets/missionarios2.webp",
+            "/assets/missionarios3.webp",
+            "/assets/missionarios4.webp",
+            "/assets/missionarios5.webp",
+            "/assets/missionarios6.webp",
+            "/assets/missionarios7.webp"
         ],
         urlProjeto:{
-            "instagram": "https://arcavinhedo.com.br/",
-            "site": "https://www.instagram.com/arcavinhedo/",
-            "whatsapp": "wa.me/5511999999999",
-            "doacao": "site.com/doacao",
+            // "instagram": "https://arcavinhedo.com.br/",
+            // "site": "https://www.instagram.com/arcavinhedo/",
+            // "whatsapp": "wa.me/5511999999999",
+            // "doacao": "",
             } 
     }
   ]
@@ -145,7 +154,7 @@ export const projetos = [
         "Madaí C. Tristan é missionária em tempo integral na Cru Brasil, atuando entre universitários em evangelização e discipulado. Nos últimos anos, ela desenvolveu o setor de Cuidado ao Missionário, oferecendo treinamento e assessoria na captação de apoio financeiro para sustento pessoal e projetos, além de acompanhamento pessoal, familiar e ministerial de missionários. Atualmente, suas atividades abrangem 18 países da América Latina e do Caribe, e ela ministra treinamento em levantamento de sustento missionário em diversas agências missionárias do Brasil. Também discipula sete mulheres que amam Jesus e crescem em conhecimento e graça dEle.",
       contato: {
         instagram: ["@madaict"],
-        telefone: ["(19) 98129-0885"],
+        telefone: ["(11) 98129-0885"],
       },
       loc: [
         {
@@ -157,7 +166,6 @@ export const projetos = [
         },
       ],
     },
-  
     {
       nome: ["Michelli Bordinhon"],
       descricao: 
@@ -232,4 +240,22 @@ export const projetos = [
         },
       ],
     },
+    {
+      nome: ["Marcos Amado"],
+      descricao:
+        "Marcos Amado é missionário da Sepal, com mais de 20 anos de experiência transcultural. Iniciou seu preparo missionário em 1981 no navio Doulos, da Operação Mobilização, onde permaneceu por três anos. Posteriormente, foi enviado pela Igreja Batista do Morumbi, juntamente com sua família, para trabalhar entre os muçulmanos do Norte da África, onde viveu por oito anos. Após esse período, concluiu sua graduação em Teologia no All Nations Christian College, no Reino Unido. Em seguida, presidiu a organização missionária PM Internacional e a ONG Pró Mundis, ambas sediadas no sul da Espanha, onde foi ordenado ao pastorado pela Convenção Batista Espanhola. Em 2004, retornou ao All Nations Christian College para realizar um mestrado em Missiologia, com especialização em Estudos Islâmicos. Regressou ao Brasil em 2006 e serviu por cinco anos como pastor de missões na Igreja Batista do Morumbi. Foi diretor para a América Latina do Movimento de Lausanne e, durante três anos, cursou 'Estudos Avançados em Religiões e Culturas do Oriente Médio' no Institute of Middle East Studies, em Beirute, Líbano. Como parte desse processo, realizou um módulo especial oferecido pela Universidade de Notre Dame (EUA) sobre a formação e origens do Alcorão. Atualmente, é fundador e diretor do Centro de Reflexão Missiológica Martureo e professor de Missões no Seminário Teológico Servo de Cristo, em São Paulo.",
+      contato: {
+        instagram: ["@amado_marcos"],
+        telefone: ["(11) 99590-3381"],
+      },
+      loc: [
+        {
+          lat: -23.5505,
+          lng: -46.6333,
+          text: "Marcos Amado",
+          color: "Red",
+          size: 30,
+        },
+      ],
+    }    
   ];

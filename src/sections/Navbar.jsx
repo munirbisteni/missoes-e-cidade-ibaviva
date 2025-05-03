@@ -57,31 +57,28 @@ const Navbar = () => {
   return (
     <header
       className={`${
-        showHeader ? "block" : "hidden" // Aplica 'hidden' se o cabeçalho deve ser ocultado
+        showHeader ? "block" : "hidden"
       } fixed inset-x-0 top-0 z-50 bg-secondary transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 sm:px-10 px-5">
-          <a
-            href="/"
-            className="flex items-center gap-3 text-xl font-bold text-white hover:text-tertiary transition-colors"
-          >
+          <a href="/" className="flex items-center">
             <img
-              src="/assets/ibaviva.png"
-              alt="Logo"
-              className="w-8 h-auto object-contain"
+              src="/assets/logoMissoes.svg"
+              alt="Logo Missões e Cidade IBAVIVA"
+              className="h-9 w-auto object-contain"
+              style={{ maxWidth: "180px" }}
             />
-            Missões e Cidade | IBAVIVA
           </a>
 
           {/* botão de toggle no mobile */}
           <button
             onClick={toggleMenu}
             className="
-              sm:hidden flex items-center
-              text-white  hover:text-
-              transition-colors focus:outline-none
-            "
+            sm:hidden flex items-center
+            text-white  hover:text-
+            transition-colors focus:outline-none
+          "
             aria-label="Toggle Menu"
           >
             <img
@@ -101,13 +98,13 @@ const Navbar = () => {
       {/* menu mobile */}
       <div
         className={`
-          absolute left-0 right-0
-          bg-black/90 backdrop-blur-sm
-          overflow-hidden
-          transition-[max-height] duration-300 ease-in-out
-          z-40 sm:hidden
-          ${isOpen ? "max-h-screen" : "max-h-0"}
-        `}
+        absolute left-0 right-0
+        bg-black/90 backdrop-blur-sm
+        overflow-hidden
+        transition-[max-height] duration-300 ease-in-out
+        z-40 sm:hidden
+        ${isOpen ? "max-h-screen" : "max-h-0"}
+      `}
       >
         <nav className="p-5">
           <NavItems />

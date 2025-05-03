@@ -1,5 +1,6 @@
-// src/components/MissionariosSection.js
-import React, { useState, useRef, useEffect } from "react";
+// Modificação para o componente MissionariosSection.js
+
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import { missionarios } from "../constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
@@ -11,8 +12,37 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../components/Missionaries.css";
 
-const Misisonaries = () => {
+// Cores para o efeito blur - predominância de tons azuis oceânicos
+const blurColors = [
+  "#0D2B4B", // Azul marinho profundo
+  "#1E3D59", // Azul naval
+  "#0F4C81", // Azul royal médio
+  "#003366", // Azul clássico profundo
+  "#1A5276", // Azul petróleo
+  "#2874A6", // Azul cerúleo
+  "#21618C", // Azul safira
+  "#154360", // Azul índigo escuro
+  "#2980B9", // Azul brilhante
+  "#0E2C54", // Azul noite
+];
+
+// Gera os elementos de blur com valores aleatórios FORA do componente
+// Isso garante que os valores aleatórios sejam gerados apenas uma vez
+const blurElements = [...Array(10)].map((_, i) => ({
+  key: i,
+  top: `${Math.random() * 100}%`,
+  left: `${Math.random() * 100}%`,
+  width: `${30 + Math.random() * 70}px`,
+  height: `${30 + Math.random() * 70}px`,
+  backgroundColor: blurColors[i % blurColors.length],
+  animationDelay: `${Math.random() * 5}s`,
+  animationDuration: `${3 + Math.random() * 7}s`,
+}));
+
+const Missionaries = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
+  // Novo estado para controlar o índice do missionário no globo mobile
+  const [mobilePinIdx, setMobilePinIdx] = useState(0);
   const [showFullscreen, setShowFullscreen] = useState(false);
   const globeRefDesktop = useRef();
   const globeRefMobile = useRef();
@@ -21,7 +51,7 @@ const Misisonaries = () => {
   const CLOUDS_ALT = 0.004;
   const CLOUDS_ROTATION_SPEED = -0.006; // deg/frame
 
-  // Move a câmera do globo quando mudar o slide (para todas versões)
+  // Efeito para atualizar o globo desktop e fullscreen quando o slide mudar
   useEffect(() => {
     const { lat, lng } = missionarios[currentIdx].loc[0];
 
@@ -30,27 +60,59 @@ const Misisonaries = () => {
       globeRefDesktop.current.pointOfView({ lat, lng, altitude: 2.2 }, 1000);
     }
 
-    // Atualiza o globo mobile
-    if (globeRefMobile.current) {
-      globeRefMobile.current.pointOfView({ lat, lng, altitude: 2.5 }, 1000);
-    }
-
     // Atualiza o globo fullscreen
-    if (globeRefFullscreen.current) {
+    if (globeRefFullscreen.current && showFullscreen) {
       globeRefFullscreen.current.pointOfView({ lat, lng, altitude: 1.8 }, 1000);
     }
-  }, [currentIdx]);
+  }, [currentIdx, showFullscreen]);
+
+  // Novo efeito para atualizar o globo mobile independentemente
+  useEffect(() => {
+    // Configura o intervalo para trocar o pin do globo mobile a cada 5 segundos
+    const mobileGlobeInterval = setInterval(() => {
+      // Calcula o próximo índice (circular)
+      const nextIdx = (mobilePinIdx + 1) % missionarios.length;
+      setMobilePinIdx(nextIdx);
+      
+      // Atualiza o globo mobile com o novo ponto
+      if (globeRefMobile.current) {
+        const { lat, lng } = missionarios[nextIdx].loc[0];
+        globeRefMobile.current.pointOfView({ lat, lng, altitude: 2.5 }, 1000);
+      }
+    }, 5000);
+
+    // Limpa o intervalo quando o componente for desmontado
+    return () => clearInterval(mobileGlobeInterval);
+  }, [mobilePinIdx]);
 
   // Configura os globos
   useEffect(() => {
     if (globeRefDesktop.current) setupGlobe(globeRefDesktop.current);
-    if (globeRefMobile.current) setupGlobe(globeRefMobile.current);
+    if (globeRefMobile.current) setupGlobe(globeRefMobile.current, mobilePinIdx); // Usa o índice específico para mobile
   }, []);
 
   // Configura o globo fullscreen quando ele é mostrado
   useEffect(() => {
     if (showFullscreen && globeRefFullscreen.current) {
-      setupGlobe(globeRefFullscreen.current);
+      // Sempre configura o globo fullscreen com o primeiro missionário (índice 0)
+      setupGlobe(globeRefFullscreen.current, 0);
+    }
+  }, [showFullscreen]);
+
+  // Efeito para resetar o currentIdx para 0 quando o modal é aberto
+  useEffect(() => {
+    if (showFullscreen) {
+      // Quando o modal é aberto, reseta para o primeiro missionário
+      setCurrentIdx(0);
+      
+      // Aguarda o próximo ciclo de renderização para garantir que o Swiper esteja disponível
+      setTimeout(() => {
+        // Encontra o Swiper dentro do modal e o move para o primeiro slide
+        const swiperInstance = document.querySelector(".missionary-swiper")?.swiper;
+        if (swiperInstance) {
+          swiperInstance.slideTo(0);
+        }
+      }, 100);
     }
   }, [showFullscreen]);
 
@@ -67,7 +129,6 @@ const Misisonaries = () => {
     };
   }, [showFullscreen]);
 
-  // Função para configurar um globo
   // Função para configurar um globo
   const setupGlobe = (globe, missionarioIdx = currentIdx) => {
     const controls = globe.controls();
@@ -153,23 +214,36 @@ const Misisonaries = () => {
     const formattedPhone = phone.replace(/\D/g, "");
     return `https://wa.me/${formattedPhone}`;
   };
-  // Cores para o efeito blur - predominância de tons azuis oceânicos
-  const blurColors = [
-    "#0D2B4B", // Azul marinho profundo
-    "#1E3D59", // Azul naval
-    "#0F4C81", // Azul royal médio
-    "#003366", // Azul clássico profundo
-    "#1A5276", // Azul petróleo
-    "#2874A6", // Azul cerúleo
-    "#21618C", // Azul safira
-    "#154360", // Azul índigo escuro
-    "#2980B9", // Azul brilhante
-    "#0E2C54", // Azul noite
-  ];
+  
+  // Renderização dos elementos de blur para o botão Explorar
+  // Usando elementos pré-gerados fora do ciclo de renderização
+  const ExploreButtonBlurEffect = React.memo(() => (
+    <>
+      <div className="absolute inset-0 backdrop-blur-md bg-blue-500/40"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        {blurElements.map((elem) => (
+          <div
+            key={elem.key}
+            className="absolute rounded-full blur-xl opacity-60 animate-pulse-slow"
+            style={{
+              top: elem.top,
+              left: elem.left,
+              width: elem.width,
+              height: elem.height,
+              backgroundColor: elem.backgroundColor,
+              animationDelay: elem.animationDelay,
+              animationDuration: elem.animationDuration,
+            }}
+          ></div>
+        ))}
+      </div>
+    </>
+  ));
+  
   return (
     <section
       id="missionarios"
-      className="relative overflow-hidden py-16 md:ml-60"
+      className="relative overflow-hidden py-16 md:ml-60 pt-0 md:pt-20"
     >
       {/* Layout para desktop - mantém o design original */}
       <div className="hidden md:block">
@@ -258,7 +332,7 @@ const Misisonaries = () => {
         </h2>
 
         <div className="flex flex-col items-center">
-          {/* Globo pequeno para preview */}
+          {/* Globo pequeno para preview - MODIFICADO para usar mobilePinIdx */}
           <div
             className="
               w-full h-[180px]
@@ -274,7 +348,7 @@ const Misisonaries = () => {
               globeImageUrl="https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
               bumpImageUrl="https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
               backgroundColor="rgba(0,0,0,0)"
-              pointsData={missionarios[currentIdx].loc}
+              pointsData={missionarios[mobilePinIdx].loc}
               pointLat="lat"
               pointLng="lng"
               pointColor={(d) => d.color}
@@ -290,41 +364,21 @@ const Misisonaries = () => {
           {/* Botão Explorar com efeito blur verde água e azul */}
           <button
             onClick={() => {
+              // Apenas abre o modal, o useEffect cuidará de resetar para o primeiro missionário
               setShowFullscreen(true);
-
-              // O setupGlobe será chamado pelo useEffect que monitora showFullscreen
-              // e já vai posicionar o globo corretamente
             }}
             className="
-    relative overflow-hidden
-    w-full py-4 rounded-xl
-    text-white font-bold text-lg
-    shadow-lg
-    transform hover:scale-105 transition-transform
-    focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50
-    z-10
-  "
+              relative overflow-hidden
+              w-full py-4 rounded-xl
+              text-white font-bold text-lg
+              shadow-lg
+              transform hover:scale-105 transition-transform
+              focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50
+              z-10
+            "
           >
-            {/* Conteúdo do botão (sem alterações) */}
-            <div className="absolute inset-0 backdrop-blur-md bg-blue-500/40"></div>
-
-            <div className="absolute inset-0 overflow-hidden">
-              {[...Array(10)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute rounded-full blur-xl opacity-60 animate-pulse-slow"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    width: `${30 + Math.random() * 70}px`,
-                    height: `${30 + Math.random() * 70}px`,
-                    backgroundColor: blurColors[i % blurColors.length],
-                    animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: `${3 + Math.random() * 7}s`,
-                  }}
-                ></div>
-              ))}
-            </div>
+            {/* Componente memorizado para o efeito de blur - não será recriado quando mobilePinIdx mudar */}
+            <ExploreButtonBlurEffect />
 
             <div className="relative flex items-center justify-center gap-2">
               <span>Explorar</span>
@@ -346,6 +400,7 @@ const Misisonaries = () => {
           </button>
         </div>
       </div>
+      
       {/* Modal de tela cheia para mobile */}
       {showFullscreen && (
         <div className="md:hidden fixed inset-0 bg-black z-50 flex flex-col">
@@ -400,9 +455,11 @@ const Misisonaries = () => {
                   <button
                     key={index}
                     onClick={() => {
+                      // Atualiza o índice atual
+                      setCurrentIdx(index);
+                      
                       // Encontrar a instância do Swiper e ir para o slide
-                      const swiperInstance =
-                        document.querySelector(".swiper")?.swiper;
+                      const swiperInstance = document.querySelector(".missionary-swiper")?.swiper;
                       if (swiperInstance) {
                         swiperInstance.slideTo(index);
                       }
@@ -420,25 +477,26 @@ const Misisonaries = () => {
           {/* Informações do missionário em tela cheia */}
           <div
             className="
-      bg-white
-      rounded-t-3xl
-      px-6 pt-8 pb-12
-      shadow-[0_-10px_30px_rgba(0,0,0,0.2)]
-      relative z-10
-      max-h-[50vh]
-      overflow-y-auto
-    "
+              bg-white
+              rounded-t-3xl
+              px-6 pt-8 pb-12
+              shadow-[0_-10px_30px_rgba(0,0,0,0.2)]
+              relative z-10
+              max-h-[50vh]
+              overflow-y-auto
+            "
           >
             {/* Indicador de arraste */}
             <div className="w-20 h-1 bg-gray-200 rounded-full mb-6 mx-auto"></div>
 
             {/* Swiper sem paginação (vamos usar a nossa personalizada) */}
             <Swiper
-              modules={[Navigation, Autoplay]}
+              modules={[Navigation]}
               slidesPerView={1}
               spaceBetween={20}
               onSlideChange={(swiper) => setCurrentIdx(swiper.realIndex)}
               className="missionary-swiper"
+              initialSlide={0} // Sempre inicia no primeiro slide
             >
               {missionarios.map((m, idx) => (
                 <SwiperSlide key={idx}>
@@ -450,7 +508,7 @@ const Misisonaries = () => {
                       {m.descricao}
                     </p>
                     <div className="w-full space-y-4 text-gray-700 mt-2 border-t border-gray-100 pt-4">
-                      {/* Contatos Instagram (sem alterações) */}
+                      {/* Contatos Instagram */}
                       {m.contato.instagram &&
                         m.contato.instagram.map((insta, i) => (
                           <a
@@ -487,7 +545,7 @@ const Misisonaries = () => {
                           </a>
                         ))}
 
-                      {/* Contatos Telefone (sem alterações) */}
+                      {/* Contatos Telefone */}
                       {m.contato.telefone &&
                         m.contato.telefone.map((tel, i) => (
                           <a
@@ -535,4 +593,4 @@ const Misisonaries = () => {
   );
 };
 
-export default Misisonaries;
+export default Missionaries;
